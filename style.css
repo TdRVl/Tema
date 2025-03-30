@@ -27,7 +27,6 @@
         .country {
             
             justify-content: space-between;
-            align-items: cover;
             padding: 30px;
             border-bottom: 1.5px solid #ccc;
             color: white;
@@ -35,7 +34,9 @@
             border-radius: 5px;
             display: flex;
             align-self: start;
-            cursor: pointer;        
+            cursor: pointer;     
+            position: relative;
+            align-items: flex-start;
          }
 
         .country:hover {
@@ -44,7 +45,6 @@
          
         .population {
             font-size: 14px;
-           
 
         }
         .flag {
