@@ -5,19 +5,18 @@ async function fetchCountries() {
         name: country.name.common,
         flag: country.flags.svg,
         population: country.population.toLocaleString(),
-        capital: country.capital ? country.capital[0] : 'No capital' // Get capital city if available
+        capital: country.capital ? country.capital[0] : 'No capital' 
     }));
 }
 
 async function searchCountries() {
     const query = document.getElementById('search').value.toLowerCase();
     const resultsContainer = document.getElementById('results');
-    resultsContainer.innerHTML = ''; // Clear previous results
+    resultsContainer.innerHTML = ''; 
 
-    if (!query) return; // Don't search if input is empty
-
-    const countries = await fetchCountries(); // Fetch countries once
-    const filtered = countries.filter(c => c.name.toLowerCase().startsWith(query)); // Filter countries that start with the input
+    if (!query) return; 
+    const countries = await fetchCountries(); 
+    const filtered = countries.filter(c => c.name.toLowerCase().startsWith(query)); 
 
     if (filtered.length === 0) {
         resultsContainer.innerHTML = '<p>No countries found.</p>';
